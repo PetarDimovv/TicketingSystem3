@@ -12,7 +12,7 @@ using TicketingSystem3.Web.Data;
 namespace TicketingSystem3.Web.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230218115544_Initial")]
+    [Migration("20230222131305_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

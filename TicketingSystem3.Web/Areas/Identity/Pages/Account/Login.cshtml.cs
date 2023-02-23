@@ -18,6 +18,7 @@ using TicketingSystem3.Web.Models;
 
 namespace TicketingSystem3.Web.Areas.Identity.Pages.Account
 {
+    [AllowAnonymous]
     public class LoginModel : PageModel
     {
         private readonly SignInManager<ApplicationUser> _signInManager;
