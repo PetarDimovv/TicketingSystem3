@@ -2,8 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using System.Data;
-using TicketingSystem3.Web.Data;
+using TicketingSystem3.Data.Data;
 
 namespace TicketingSystem3.Web.Pages.Project
 {
@@ -24,7 +23,7 @@ namespace TicketingSystem3.Web.Pages.Project
         }
 
         [BindProperty]
-        public Models.Project Project { get; set; }
+        public Data.Models.Project Project { get; set; }
 
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD

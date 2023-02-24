@@ -2,8 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using System.Data;
-using TicketingSystem3.Web.Data;
+using TicketingSystem3.Data.Data;
 
 namespace TicketingSystem3.Web.Pages.Message
 {
@@ -25,7 +24,7 @@ namespace TicketingSystem3.Web.Pages.Message
         }
 
         [BindProperty]
-        public Models.Message Message { get; set; }
+        public Data.Models.Message Message { get; set; }
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD

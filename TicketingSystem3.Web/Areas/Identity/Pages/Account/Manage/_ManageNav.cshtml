@@ -1,4 +1,4 @@
-﻿@using TicketingSystem3.Web.Models;
+﻿@using TicketingSystem3.Data.Models;
 @inject SignInManager<ApplicationUser> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();

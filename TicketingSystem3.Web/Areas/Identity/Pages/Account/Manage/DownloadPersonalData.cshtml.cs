@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using TicketingSystem3.Web.Models;
+using TicketingSystem3.Data.Models;
 
 namespace TicketingSystem3.Web.Areas.Identity.Pages.Account.Manage
 {

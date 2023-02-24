@@ -3,8 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using System.Data;
-using TicketingSystem3.Web.Data;
+using TicketingSystem3.Data.Data;
 
 namespace TicketingSystem3.Web.Pages.Ticket
 {
@@ -19,7 +18,7 @@ namespace TicketingSystem3.Web.Pages.Ticket
         }
 
         [BindProperty]
-        public Models.Ticket Ticket { get; set; } = default!;
+        public Data.Models.Ticket Ticket { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(long? id)
         {

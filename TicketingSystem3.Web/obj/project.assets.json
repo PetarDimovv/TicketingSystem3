@@ -3698,6 +3698,24 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "TicketingSystem3.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
+          "Microsoft.AspNetCore.Identity.UI": "6.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0",
+          "Microsoft.EntityFrameworkCore.Tools": "6.0.0",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.12"
+        },
+        "compile": {
+          "bin/placeholder/TicketingSystem3.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TicketingSystem3.Data.dll": {}
+        }
       }
     }
   },
@@ -10446,6 +10464,11 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "TicketingSystem3.Data/1.0.0": {
+      "type": "project",
+      "path": "../TicketingSystem3.Data/TicketingSystem3.Data.csproj",
+      "msbuildProject": "../TicketingSystem3.Data/TicketingSystem3.Data.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -10456,7 +10479,8 @@
       "Microsoft.EntityFrameworkCore.Design >= 6.0.*",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.*",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.*",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.12"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.12",
+      "TicketingSystem3.Data >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -10485,7 +10509,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\User\\Desktop\\Sended Project\\TicketingSystem3.Data\\TicketingSystem3.Data.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\Sended Project\\TicketingSystem3.Data\\TicketingSystem3.Data.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

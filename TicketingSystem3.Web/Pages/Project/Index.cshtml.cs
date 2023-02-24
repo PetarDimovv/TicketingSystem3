@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Build.Framework;
 using Microsoft.EntityFrameworkCore;
-using TicketingSystem3.Web.Data;
+using TicketingSystem3.Data.Data;
 
 namespace TicketingSystem3.Web.Pages.Project
 {
@@ -16,7 +16,7 @@ namespace TicketingSystem3.Web.Pages.Project
             _context = context;
         }
 
-        public IList<Models.Project> Project { get;set; } = default!;
+        public IList<Data.Models.Project> Project { get;set; } = default!;
 
         public async Task OnGetAsync()
         {

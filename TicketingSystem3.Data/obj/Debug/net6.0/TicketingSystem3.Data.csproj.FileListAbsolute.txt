@@ -1,0 +1,14 @@
+C:\Users\User\Desktop\Sended Project\TicketingSystem3.Data\bin\Debug\net6.0\TicketingSystem3.Data.deps.json
+C:\Users\User\Desktop\Sended Project\TicketingSystem3.Data\bin\Debug\net6.0\TicketingSystem3.Data.runtimeconfig.json
+C:\Users\User\Desktop\Sended Project\TicketingSystem3.Data\bin\Debug\net6.0\TicketingSystem3.Data.dll
+C:\Users\User\Desktop\Sended Project\TicketingSystem3.Data\bin\Debug\net6.0\TicketingSystem3.Data.pdb
+C:\Users\User\Desktop\Sended Project\TicketingSystem3.Data\obj\Debug\net6.0\TicketingSystem3.Data.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Sended Project\TicketingSystem3.Data\obj\Debug\net6.0\TicketingSystem3.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Sended Project\TicketingSystem3.Data\obj\Debug\net6.0\TicketingSystem3.Data.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Sended Project\TicketingSystem3.Data\obj\Debug\net6.0\TicketingSystem3.Data.AssemblyInfo.cs
+C:\Users\User\Desktop\Sended Project\TicketingSystem3.Data\obj\Debug\net6.0\TicketingSystem3.Data.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Sended Project\TicketingSystem3.Data\obj\Debug\net6.0\TicketingSystem3.Data.dll
+C:\Users\User\Desktop\Sended Project\TicketingSystem3.Data\obj\Debug\net6.0\refint\TicketingSystem3.Data.dll
+C:\Users\User\Desktop\Sended Project\TicketingSystem3.Data\obj\Debug\net6.0\TicketingSystem3.Data.pdb
+C:\Users\User\Desktop\Sended Project\TicketingSystem3.Data\obj\Debug\net6.0\TicketingSystem3.Data.genruntimeconfig.cache
+C:\Users\User\Desktop\Sended Project\TicketingSystem3.Data\obj\Debug\net6.0\ref\TicketingSystem3.Data.dll

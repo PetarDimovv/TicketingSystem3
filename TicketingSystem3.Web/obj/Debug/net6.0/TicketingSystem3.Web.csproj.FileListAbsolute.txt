@@ -277,15 +277,6 @@ C:\Users\User\Desktop\Ticketing System 3\TicketingSystem3\TicketingSystem3.Web\o
 C:\Users\User\Desktop\Ticketing System 3\TicketingSystem3\TicketingSystem3.Web\obj\Debug\net6.0\TicketingSystem3.Web.pdb
 C:\Users\User\Desktop\Ticketing System 3\TicketingSystem3\TicketingSystem3.Web\obj\Debug\net6.0\TicketingSystem3.Web.genruntimeconfig.cache
 C:\Users\User\Desktop\Ticketing System 3\TicketingSystem3\TicketingSystem3.Web\obj\Debug\net6.0\ref\TicketingSystem3.Web.dll
-C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\obj\Debug\net6.0\TicketingSystem3.Web.csproj.AssemblyReference.cache
-C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\obj\Debug\net6.0\TicketingSystem3.Web.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\obj\Debug\net6.0\TicketingSystem3.Web.AssemblyInfoInputs.cache
-C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\obj\Debug\net6.0\TicketingSystem3.Web.AssemblyInfo.cs
-C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\obj\Debug\net6.0\TicketingSystem3.Web.csproj.CoreCompileInputs.cache
-C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\obj\Debug\net6.0\TicketingSystem3.Web.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\obj\Debug\net6.0\TicketingSystem3.Web.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\obj\Debug\net6.0\TicketingSystem3.Web.RazorAssemblyInfo.cache
-C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\obj\Debug\net6.0\TicketingSystem3.Web.RazorAssemblyInfo.cs
 C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\bin\Debug\net6.0\appsettings.json
 C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\bin\Debug\net6.0\TicketingSystem3.Web.staticwebassets.runtime.json
@@ -540,6 +531,17 @@ C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\bin\Debug\net6.0\runti
 C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\bin\Debug\net6.0\TicketingSystem3.Data.dll
+C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\bin\Debug\net6.0\TicketingSystem3.Data.pdb
+C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\obj\Debug\net6.0\TicketingSystem3.Web.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\obj\Debug\net6.0\TicketingSystem3.Web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\obj\Debug\net6.0\TicketingSystem3.Web.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\obj\Debug\net6.0\TicketingSystem3.Web.AssemblyInfo.cs
+C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\obj\Debug\net6.0\TicketingSystem3.Web.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\obj\Debug\net6.0\TicketingSystem3.Web.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\obj\Debug\net6.0\TicketingSystem3.Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\obj\Debug\net6.0\TicketingSystem3.Web.RazorAssemblyInfo.cache
+C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\obj\Debug\net6.0\TicketingSystem3.Web.RazorAssemblyInfo.cs
 C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\obj\Debug\net6.0\staticwebassets\msbuild.TicketingSystem3.Web.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\obj\Debug\net6.0\staticwebassets\msbuild.build.TicketingSystem3.Web.props
 C:\Users\User\Desktop\Sended Project\TicketingSystem3.Web\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.TicketingSystem3.Web.props

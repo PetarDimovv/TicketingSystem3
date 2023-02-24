@@ -2,9 +2,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using TicketingSystem3.Web.Data;
-using TicketingSystem3.Web.Data.CustomRoles;
-using TicketingSystem3.Web.Models;
+using TicketingSystem3.Data.Data;
+using TicketingSystem3.Data.Data.CustomRoles;
+using TicketingSystem3.Data.Models;
 
 
 var builder = WebApplication.CreateBuilder(args);
