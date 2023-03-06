@@ -2,10 +2,11 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using TicketingSystem3.Data.Data;
+using Microsoft.AspNetCore.Identity;
 
 namespace TicketingSystem3.Web.Pages.Ticket
 {
-    [Authorize(Roles = "Admin, Support")]
+    [Authorize(Roles = "Admin, Support, Customer")]
     public class IndexModel : PageModel
     {
         private readonly ApplicationDbContext _context;

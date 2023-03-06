@@ -25,7 +25,7 @@ namespace TicketingSystem3.Web.Pages.Ticket
 
         [BindProperty]
         public Data.Models.Ticket Ticket { get; set; }
-        
+
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()

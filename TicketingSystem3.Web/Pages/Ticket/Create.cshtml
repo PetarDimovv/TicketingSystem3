@@ -1,6 +1,5 @@
 ﻿@page
 @model TicketingSystem3.Web.Pages.Ticket.CreateModel
-
 @{
     ViewData["Title"] = "Create";
 }
@@ -19,21 +18,27 @@
                 <span asp-validation-for="Ticket.SubmissionDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Ticket.UserId" class="control-label"></label>
-                <select asp-for="Ticket.UserId" class ="form-control" asp-items="ViewBag.UserId"></select>
-            </div>
-            <div class="form-group">
                 <label asp-for="Ticket.ProjectId" class="control-label"></label>
                 <select asp-for="Ticket.ProjectId" class ="form-control" asp-items="ViewBag.ProjectId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Ticket.Type" class="control-label"></label>
-                <select asp-for="Ticket.Type" class="form-control"></select>
+                <select asp-for="Ticket.Type" class="form-control">
+                    <option value="0">BugReport</option>
+                    <option value="1">FeatureRequest</option>
+                    <option value="2">AssistanceRequest</option>
+                    <option value="3">Other</option>
+                </select>
                 <span asp-validation-for="Ticket.Type" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Ticket.Status" class="control-label"></label>
-                <select asp-for="Ticket.Status" class="form-control"></select>
+                <select asp-for="Ticket.Status" class="form-control">
+                    <option value="0">Draft</option>
+                    <option value="1">New</option>
+                    <option value="2">WorkedOn</option>
+                    <option value="3">Completed</option>
+                </select>
                 <span asp-validation-for="Ticket.Status" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -50,11 +55,6 @@
                 <label asp-for="Ticket.CreatedOn" class="control-label"></label>
                 <input asp-for="Ticket.CreatedOn" class="form-control" />
                 <span asp-validation-for="Ticket.CreatedOn" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Ticket.ModifiedOn" class="control-label"></label>
-                <input asp-for="Ticket.ModifiedOn" class="form-control" />
-                <span asp-validation-for="Ticket.ModifiedOn" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

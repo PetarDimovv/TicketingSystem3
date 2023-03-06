@@ -38,22 +38,6 @@ builder.Services.AddScoped<ICustomRoleManager, CustomRoleManager>();
 
 var app = builder.Build();
 
-//using var scope = app.Services.CreateScope();
-//var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-
-//if (!await roleManager.RoleExistsAsync("Admin"))
-//{
-//    await roleManager.CreateAsync(new IdentityRole("Admin"));
-//}
-//if (!await roleManager.RoleExistsAsync("Support"))
-//{
-//    await roleManager.CreateAsync(new IdentityRole("Support"));
-//}
-//if (!await roleManager.RoleExistsAsync("Customer"))
-//{
-//    await roleManager.CreateAsync(new IdentityRole("Customer"));
-//}
-
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

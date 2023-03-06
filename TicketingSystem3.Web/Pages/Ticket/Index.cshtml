@@ -1,6 +1,5 @@
 ﻿@page
 @model TicketingSystem3.Web.Pages.Ticket.IndexModel
-
 @{
     ViewData["Title"] = "Index";
 }
@@ -10,23 +9,13 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Ticket[0].SubmissionDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ticket[0].User)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Ticket[0].Project)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ticket[0].Type)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ticket[0].Status)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Ticket[0].Title)
@@ -35,7 +24,19 @@
                 @Html.DisplayNameFor(model => model.Ticket[0].Description)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Ticket[0].User)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ticket[0].Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ticket[0].Status)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Ticket[0].CreatedOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ticket[0].SubmissionDate)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Ticket[0].ModifiedOn)
@@ -44,41 +45,44 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Ticket) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.SubmissionDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.User.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Project.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedOn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ModifiedOn)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Ticket)
+        {
+            if (User.Identity.Name != item.User.UserName && User.IsInRole("Customer")) continue;
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Project.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedOn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SubmissionDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModifiedOn)
+                </td>
+                <td>
+                    <a asp-page="/Message/Index" asp-route-id="@item.Id">View Messages</a> |
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
