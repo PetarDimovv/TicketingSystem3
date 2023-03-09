@@ -4,26 +4,30 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>Ticket</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container">
+        <h1>Create Ticket</h1>
+    </div>
+</div>
+<div>
+    <div class="container">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Ticket.SubmissionDate" class="control-label"></label>
-                <input asp-for="Ticket.SubmissionDate" class="form-control" />
-                <span asp-validation-for="Ticket.SubmissionDate" class="text-danger"></span>
+            <div class="mb-3">
+                <label for="title" class="control-label">Title</label>
+                <input type="text" class="form-control" id="title" asp-for="CreateTicketRequest.Title" />
+            </div>
+            <div class="mb-3">
+                <label for="description" class="control-label">Description</label>
+                <textarea class="form-control" id="description" asp-for="CreateTicketRequest.Description"></textarea>
             </div>
             <div class="form-group">
-                <label asp-for="Ticket.ProjectId" class="control-label"></label>
-                <select asp-for="Ticket.ProjectId" class ="form-control" asp-items="ViewBag.ProjectId"></select>
+                <label asp-for="CreateTicketRequest.ProjectId" class="control-label"></label>
+                <select asp-for="CreateTicketRequest.ProjectId" class="form-control" asp-items="ViewBag.ProjectId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Ticket.Type" class="control-label"></label>
-                <select asp-for="Ticket.Type" class="form-control">
+                <label asp-for="CreateTicketRequest.Type" class="control-label"></label>
+                <select asp-for="CreateTicketRequest.Type" class="form-control">
                     <option value="0">BugReport</option>
                     <option value="1">FeatureRequest</option>
                     <option value="2">AssistanceRequest</option>
@@ -32,8 +36,8 @@
                 <span asp-validation-for="Ticket.Type" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Ticket.Status" class="control-label"></label>
-                <select asp-for="Ticket.Status" class="form-control">
+                <label asp-for="CreateTicketRequest.Status" class="control-label"></label>
+                <select asp-for="CreateTicketRequest.Status" class="form-control">
                     <option value="0">Draft</option>
                     <option value="1">New</option>
                     <option value="2">WorkedOn</option>
@@ -42,31 +46,22 @@
                 <span asp-validation-for="Ticket.Status" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Ticket.Title" class="control-label"></label>
-                <input asp-for="Ticket.Title" class="form-control" />
-                <span asp-validation-for="Ticket.Title" class="text-danger"></span>
+                <label asp-for="CreateTicketRequest.SubmissionDate" class="control-label"></label>
+                <input asp-for="CreateTicketRequest.SubmissionDate" class="form-control" />
+                <span asp-validation-for="Ticket.SubmissionDate" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Ticket.Description" class="control-label"></label>
-                <input asp-for="Ticket.Description" class="form-control" />
-                <span asp-validation-for="Ticket.Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Ticket.CreatedOn" class="control-label"></label>
-                <input asp-for="Ticket.CreatedOn" class="form-control" />
-                <span asp-validation-for="Ticket.CreatedOn" class="text-danger"></span>
-            </div>
-            <div class="form-group">
+            <div class="mb-3">
                 <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+            <div class="mb-3">
+                <a asp-page="Index">Back to List</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-page="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

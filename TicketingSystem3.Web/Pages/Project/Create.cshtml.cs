@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.SignalR;
+using System.Data;
 using System.Xml.Linq;
 using TicketingSystem3.Data.Data;
 
@@ -22,9 +24,11 @@ namespace TicketingSystem3.Web.Pages.Project
 
         public IActionResult OnGet()
         {
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
             return Page();
         }
+
+        [BindProperty]
+        public Data.Models.ViewModels.CreateProject CreateProjectRequest { get; set; }
 
         [BindProperty]
         public Data.Models.Project Project { get; set; }
@@ -33,6 +37,7 @@ namespace TicketingSystem3.Web.Pages.Project
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
+            
             if (!ModelState.IsValid)
             {
                 return Page();
@@ -41,7 +46,10 @@ namespace TicketingSystem3.Web.Pages.Project
             var userId = user.Id;
             var project = new Data.Models.Project()
             {
-                
+                Name = CreateProjectRequest.Name,
+                Description = CreateProjectRequest.Description,
+                UserId = userId,
+                CreatedOn = DateTime.Now,
             };
             _context.Projects.Add(project);
             await _context.SaveChangesAsync();

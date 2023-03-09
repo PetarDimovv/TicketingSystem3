@@ -6,7 +6,7 @@ namespace TicketingSystem3.Data.Models
     public class Ticket : BaseModel<long>
     {
         public DateTime SubmissionDate { get; set; }
-        public string UserId { get; set; }
+        public string? UserId { get; set; }
         public ApplicationUser? User { get; set; }
         public long ProjectId { get; set; }
         public Project? Project { get; set; }
