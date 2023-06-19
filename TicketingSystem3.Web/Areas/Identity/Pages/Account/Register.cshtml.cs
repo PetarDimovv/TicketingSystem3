@@ -13,6 +13,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Text.Encodings.Web;
 using TicketingSystem3.Data.Models;
+using TicketingSystem3.Web.Pages.ApplicationUser;
 
 namespace TicketingSystem3.Web.Areas.Identity.Pages.Account
 {
@@ -122,6 +123,8 @@ namespace TicketingSystem3.Web.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = CreateUser();
+                user.FirstName = Input.FirstName;
+                user.LastName = Input.LastName;
 
                 await _userStore.SetUserNameAsync(user, Input.UserName, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
