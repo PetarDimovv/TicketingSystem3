@@ -12,7 +12,7 @@ using TicketingSystem3.Data.Data;
 namespace TicketingSystem3.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230620075455_Initial")]
+    [Migration("20230620151102_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -179,6 +179,9 @@ namespace TicketingSystem3.Data.Migrations
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsApprove")
+                        .HasColumnType("bit");
+
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
@@ -324,6 +327,9 @@ namespace TicketingSystem3.Data.Migrations
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Role")
                         .HasColumnType("nvarchar(max)");
 
@@ -332,7 +338,7 @@ namespace TicketingSystem3.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PandingRegistrations");
+                    b.ToTable("PendingRegistrations");
                 });
 
             modelBuilder.Entity("TicketingSystem3.Data.Models.Project", b =>
