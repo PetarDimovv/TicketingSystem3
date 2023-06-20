@@ -8,7 +8,7 @@ using TicketingSystem3.Data.Models.Enums;
 
 namespace TicketingSystem3.Data.Models
 {
-    public class PandingRegistration : BaseModel<long>
+    public class PendingRegistration : BaseModel<long>
     {
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
