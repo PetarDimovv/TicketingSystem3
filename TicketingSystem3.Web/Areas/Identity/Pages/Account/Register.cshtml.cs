@@ -15,7 +15,7 @@ using System.Text;
 using System.Text.Encodings.Web;
 using TicketingSystem3.Data.Data;
 using TicketingSystem3.Data.Models;
-using TicketingSystem3.Web.Pages.ApplicationUser;
+using TicketingSystem3.Web.Pages.Admin;
 
 namespace TicketingSystem3.Web.Areas.Identity.Pages.Account
 {
