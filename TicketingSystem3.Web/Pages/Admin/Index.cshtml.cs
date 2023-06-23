@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using TicketingSystem3.Data.Data;
 using TicketingSystem3.Data.Models;
 using TicketingSystem3.Data.Models.ViewModels;
 
@@ -11,11 +12,14 @@ namespace TicketingSystem3.Web.Pages.Admin
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
-
-        public IndexModel(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
+        private readonly ApplicationDbContext _dbContext;
+        public IndexModel(UserManager<ApplicationUser> userManager, 
+            RoleManager<IdentityRole> roleManager,
+            ApplicationDbContext dbContext)
         {
             _userManager = userManager;
             _roleManager = roleManager;
+            _dbContext = dbContext;
         }
 
         public List<ViewUsersModel> Users { get; set; }
@@ -33,6 +37,7 @@ namespace TicketingSystem3.Web.Pages.Admin
                     Id = user.Id,
                     UserName = user.UserName,
                     Email = user.Email,
+                    IsApprove = user.IsApprove,
                     Roles = roles.ToList()
                 };
 
@@ -40,6 +45,38 @@ namespace TicketingSystem3.Web.Pages.Admin
             }
 
             return Page();
+        }
+
+        public async Task<IActionResult> OnPostUserApprove(string id)
+        {
+            var userToApprove = await _userManager.FindByIdAsync(id);
+
+            if (userToApprove == null)
+            {
+                return NotFound();
+            }
+
+            userToApprove.IsApprove = true;
+
+            await _dbContext.SaveChangesAsync();
+
+            return RedirectToPage();
+        }
+
+        public async Task<IActionResult> OnPostUserReject(string id)
+        {
+            var userToApprove = await _userManager.FindByIdAsync(id);
+
+            if (userToApprove == null)
+            {
+                return NotFound();
+            }
+
+            userToApprove.IsApprove = false;
+
+            await _dbContext.SaveChangesAsync();
+
+            return RedirectToPage();
         }
     }
 }

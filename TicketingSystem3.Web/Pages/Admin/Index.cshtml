@@ -18,6 +18,40 @@
     <tbody>
         @foreach (var user in Model.Users)
         {
+            @if(user.IsApprove == true)
+            {
+                continue;
+            }
+            <tr>
+                <td>@user.UserName</td>
+                <td>@user.Email</td>
+                <td>
+                    @foreach (var role in user.Roles)
+                    {
+                        <span>@role</span>
+                    }
+                </td>
+                <td>
+                    <a href="Admin/EditUser?userId=@user.Id" class="btn btn-primary">Edit</a>
+                </td>
+                <td>
+                    <form method="post" asp-page-handler="UserApprove" asp-route-id="@user.Id">
+                        <button type="submit">Approve</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="post" asp-page-handler="UserReject" asp-route-id="@user.Id">
+                        <button type="submit">Reject</button>
+                    </form>
+                </td>
+            </tr>
+        }
+        @foreach (var user in Model.Users)
+        {
+            @if (user.IsApprove == false)
+            {
+                continue;
+            }
             <tr>
                 <td>@user.UserName</td>
                 <td>@user.Email</td>
