@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TicketingSystem3.Data.Data;
+using TicketingSystem3.Data.Models;
 
 namespace TicketingSystem3.Web.Pages.Message
 {
@@ -11,14 +13,25 @@ namespace TicketingSystem3.Web.Pages.Message
     public class EditModel : PageModel
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public EditModel (ApplicationDbContext context)
+        public EditModel (ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         [BindProperty]
+        public DateTime CreatedOn { get; set; } 
+
+        [BindProperty]
         public Data.Models.Message Message { get; set; } = default!;
+
+        [BindProperty]
+        public long NewTicketId { get; set; }
+
+        [BindProperty]
+        public string UserId { get; set; }
 
         public async Task<IActionResult> OnGetAsync(long? id)
         {
@@ -32,9 +45,11 @@ namespace TicketingSystem3.Web.Pages.Message
             {
                 return NotFound();
             }
+            CreatedOn = message.CreatedOn;
+            NewTicketId = message.TicketId;
+            UserId = message.UserId;
             Message = message;
-           ViewData["TicketId"] = new SelectList(_context.Tickets, "Id", "Id");
-           ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
+            
             return Page();
         }
 
@@ -47,7 +62,13 @@ namespace TicketingSystem3.Web.Pages.Message
                 return Page();
             }
 
+            var user = await _userManager.FindByIdAsync(UserId);
             _context.Attach(Message).State = EntityState.Modified;
+            Message.ModifiedOn = DateTime.Now;
+            Message.TicketId = NewTicketId;
+            Message.UserId = user.Id;
+            Message.CreatedOn = CreatedOn;
+
 
             try
             {

@@ -34,7 +34,6 @@ namespace TicketingSystem3.Web.Pages.Project
                 return NotFound();
             }
             Project = project;
-          // ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
             return Page();
         }
 

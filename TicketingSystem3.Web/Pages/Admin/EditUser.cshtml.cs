@@ -9,12 +9,12 @@ namespace TicketingSystem3.Web.Pages.Admin
     public class EditUserModel : PageModel
     {
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public EditUserModel (UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        public EditUserModel (UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
-            _signInManager = signInManager;
+            _roleManager = roleManager;
         }
         [BindProperty]
         public ApplicationUser User { get; set; }
@@ -26,34 +26,44 @@ namespace TicketingSystem3.Web.Pages.Admin
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
+        [BindProperty]
+        public string CurrentRole { get; set; }
+
         public async Task<IActionResult> OnGetAsync(string userId)
         {
             User = await _userManager.FindByIdAsync(userId);
+
 
             if (User == null)
             {
                 return NotFound();
             }
+            var userRoles = _userManager.GetRolesAsync(User).Result;
+            CurrentRole = userRoles[0];
 
             UserId = userId;
 
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(string newRole)
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
             var user = await _userManager.FindByIdAsync(UserId);
 
             if (user == null)
             {
                 return NotFound();
             }
+            var currentRoles = _userManager.GetRolesAsync(user).Result;
+            var roleResult = _userManager.RemoveFromRolesAsync(user, currentRoles).Result;
 
+            roleResult = _userManager.AddToRoleAsync(user, newRole).Result;
+
+            if (!roleResult.Succeeded)
+            {
+                ModelState.AddModelError("", "Failed to change user role.");
+                return Page();
+            }
             user.FirstName = User.FirstName;
             user.LastName = User.LastName;
             user.Email = User.Email;

@@ -8,6 +8,7 @@
 <h1>Edit User</h1>
 
 <form method="post">
+    <input type="hidden" asp-for="CurrentRole" />
     <div>
         <label for="firstName">First Name:</label>
         <input type="text" id="firstName" name="FirstName" value="@Model.User.FirstName" />
@@ -19,6 +20,18 @@
     <div>
         <label for="email">Email:</label>
         <input type="text" id="email" name="Email" value="@Model.User.Email" />
+    </div>
+    <div>
+        <label for="currentRoles">Current Role:</label>
+        <span id="currentRoles">@Model.CurrentRole</span>
+    </div>
+    <div>
+        <label for="newRole">New Role:</label>
+        <select id="newRole" name="NewRole">
+            <option value="Customer">Customer</option>
+            <option value="Support">Support</option>
+            <option value="Admin">Admin</option>
+        </select>
     </div>
     <div>
         <label for="password">New Password:</label>

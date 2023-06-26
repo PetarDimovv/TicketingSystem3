@@ -200,10 +200,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVzc2FnZVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Desktop/New folder (3)/TicketingSystem3.Web/Pages/Message/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVzc2FnZVxEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/user/Desktop/New folder (3)/TicketingSystem3.Web/Pages/Message/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVzc2FnZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -216,14 +212,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVzc2FnZVxUaWNrSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Desktop/New folder (3)/TicketingSystem3.Web/Pages/Pending/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGVuZGluZ1xFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/user/Desktop/New folder (3)/TicketingSystem3.Web/Pages/Pending/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGVuZGluZ1xJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/user/Desktop/New folder (3)/TicketingSystem3.Web/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -234,10 +222,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/user/Desktop/New folder (3)/TicketingSystem3.Web/Pages/Project/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvamVjdFxEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/user/Desktop/New folder (3)/TicketingSystem3.Web/Pages/Project/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvamVjdFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/user/Desktop/New folder (3)/TicketingSystem3.Web/Pages/Project/Edit.cshtml]
@@ -262,10 +246,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/user/Desktop/New folder (3)/TicketingSystem3.Web/Pages/Ticket/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGlja2V0XERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/user/Desktop/New folder (3)/TicketingSystem3.Web/Pages/Ticket/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGlja2V0XERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/user/Desktop/New folder (3)/TicketingSystem3.Web/Pages/Ticket/Edit.cshtml]

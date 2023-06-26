@@ -24,7 +24,6 @@ namespace TicketingSystem3.Data.Data
         public DbSet<Project> Projects { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<TicketingSystem3.Data.Models.File> Files { get; set; }
-        public DbSet<PendingRegistration> PendingRegistrations { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)
