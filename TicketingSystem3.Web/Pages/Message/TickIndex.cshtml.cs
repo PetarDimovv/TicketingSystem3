@@ -1,24 +1,27 @@
-﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using TicketingSystem3.Data.Data;
 
 namespace TicketingSystem3.Web.Pages.Message
 {
-    [Authorize(Roles = "Admin, Support")]
-    public class IndexModel : PageModel
+    public class TickIndexModel : PageModel
     {
         private readonly ApplicationDbContext _context;
 
-        public IndexModel(ApplicationDbContext context)
+        public TickIndexModel(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        public IList<Data.Models.Message> Message { get;set; } = default!;
+        public IList<Data.Models.Message> Message { get; set; } = default!;
 
-        public async Task OnGetAsync()
+        [BindProperty]
+        public long PassedId { get; set; }
+
+        public async Task OnGetAsync(long id)
         {
+            PassedId = id;
             if (_context.Messages != null)
             {
                 Message = await _context.Messages

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 using TicketingSystem3.Data.Data;
 
 namespace TicketingSystem3.Web.Pages.Project
@@ -33,7 +34,7 @@ namespace TicketingSystem3.Web.Pages.Project
                 return NotFound();
             }
             Project = project;
-           ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
+          // ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
             return Page();
         }
 
@@ -47,6 +48,7 @@ namespace TicketingSystem3.Web.Pages.Project
             }
 
             _context.Attach(Project).State = EntityState.Modified;
+            Project.ModifiedOn = DateTime.Now;
 
             try
             {

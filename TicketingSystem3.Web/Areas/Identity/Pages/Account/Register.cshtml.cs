@@ -127,20 +127,6 @@ namespace TicketingSystem3.Web.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var pendingRegistration = new PendingRegistration()
-                {
-                    FirstName = Input.FirstName,
-                    LastName = Input.LastName,
-                    UserName = Input.UserName,
-                    Email = Input.Email,
-                    Password = Input.Password,
-                    Role = "Customer"
-                };
-
-                _dbContext.PendingRegistrations.Add(pendingRegistration);
-                await _dbContext.SaveChangesAsync();
-
-
                 var user = CreateUser();
                 user.FirstName = Input.FirstName;
                 user.LastName = Input.LastName;

@@ -1,8 +1,7 @@
 ﻿@page
-@model TicketingSystem3.Web.Pages.Message.IndexModel
-
+@model TicketingSystem3.Web.Pages.Message.TickIndexModel
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "TickIndex";
 }
 
 
@@ -12,7 +11,9 @@
     </div>
 </div>
 
+
 <table class="table">
+    <input type="hidden" asp-for="PassedId" />
     <thead>
         <tr>
             <th>
@@ -40,8 +41,10 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Message) {
-        <tr>
+@foreach (var item in Model.Message)
+{
+            if (item.TicketId != Model.PassedId)  continue;  
+            <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Ticket.Title)
             </td>

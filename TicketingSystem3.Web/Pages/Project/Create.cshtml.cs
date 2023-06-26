@@ -10,7 +10,7 @@ using TicketingSystem3.Data.Data;
 
 namespace TicketingSystem3.Web.Pages.Project
 {
-    [Authorize(Roles = "Admin, Customer")]
+    [Authorize(Roles = "Admin")]
     public class CreateModel : PageModel
     {
         private readonly ApplicationDbContext _context;

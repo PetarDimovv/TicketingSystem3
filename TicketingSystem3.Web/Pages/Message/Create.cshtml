@@ -17,42 +17,23 @@
     <div class="container">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PassedId" />
             <div class="mb-3">
-                <label asp-for="Message.PublicationDate" class="control-label"></label>
-                <input asp-for="Message.PublicationDate" class="form-control" />
-                <span asp-validation-for="Message.PublicationDate" class="text-danger"></span>
+                <label for="message" class="control-label">Content</label>
+                <input type="text" class="form-control" id="content" asp-for="CreateMessageRequest.Content" />
             </div>
             <div class="mb-3">
-                <label asp-for="Message.UserId" class="control-label"></label>
-                <select asp-for="Message.UserId" class ="form-control" asp-items="ViewBag.UserId"></select>
-            </div>
-            <div class="mb-3">
-                <label asp-for="Message.TicketId" class="control-label"></label>
-                <select asp-for="Message.TicketId" class ="form-control" asp-items="ViewBag.TicketId"></select>
-            </div>
-            <div class="mb-3">
-                <label asp-for="Message.Status" class="control-label"></label>
-                <select 
-                    asp-for="Message.Status" class="form-control">
+                <label asp-for="CreateMessageRequest.Status" class="control-label"></label>
+                <select asp-for="CreateMessageRequest.Status" class="form-control">
                         <option value="0">Draft</option>
                         <option value="1">Published</option>
                 </select>
                 <span asp-validation-for="Message.Status" class="text-danger"></span>
             </div>
             <div class="mb-3">
-                <label asp-for="Message.Content" class="control-label"></label>
-                <input asp-for="Message.Content" class="form-control" />
-                <span asp-validation-for="Message.Content" class="text-danger"></span>
-            </div>
-            <div class="mb-3">
-                <label asp-for="Message.CreatedOn" class="control-label"></label>
-                <input asp-for="Message.CreatedOn" class="form-control" />
-                <span asp-validation-for="Message.CreatedOn" class="text-danger"></span>
-            </div>
-            <div class="mb-3">
-                <label asp-for="Message.ModifiedOn" class="control-label"></label>
-                <input asp-for="Message.ModifiedOn" class="form-control" />
-                <span asp-validation-for="Message.ModifiedOn" class="text-danger"></span>
+                <label asp-for="CreateMessageRequest.PublicationDate" class="control-label"></label>
+                <input asp-for="CreateMessageRequest.PublicationDate" class="form-control" />
+                <span asp-validation-for="Message.PublicationDate" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <input type="submit" value="Create" class="btn btn-primary" />

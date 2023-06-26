@@ -4,11 +4,11 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div>
+        <h1>Tickets</h1>
+    </div>
+</div>
 
 
 <table class="table">
@@ -77,10 +77,10 @@
                     @Html.DisplayFor(modelItem => item.ModifiedOn)
                 </td>
                 <td>
-                    <a asp-page="/Message/Index" asp-route-id="@item.Id">View Messages</a> |
-                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-page="/Message/TickIndex" asp-route-id="@item.Id" class="btn btn-primary">View Messages</a> 
+                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a> 
+                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-primary">Delete</a>
+                    <a asp-page="/Message/Create" asp-route-id="@item.Id" class="btn btn-primary">Create Message</a>
                 </td>
             </tr>
         }

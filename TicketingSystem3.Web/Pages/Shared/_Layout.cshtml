@@ -34,9 +34,6 @@
                                         <a class="dropdown-item" href="/Admin/Index">All Users</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="/Admin/Edit">Edit Users</a>
-                                    </li>
-                                    <li>
                                         <a class="dropdown-item" href="/Project/Create">Create Project</a>
                                     </li>
                                 </ul>
@@ -48,9 +45,12 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-page="/Ticket/Index">Tickets</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-page="/Message/Index">Messages</a>
-                        </li>
+                        @if (!User.IsInRole("Customer"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/Message/Index">Messages</a>
+                            </li>
+                        }
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
