@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using TicketingSystem3.Data.Data;
 using TicketingSystem3.Data.Data.CustomRoles;
+using TicketingSystem3.Data.Data.Seeders;
 using TicketingSystem3.Data.Models;
 
 
@@ -33,6 +34,7 @@ builder.Services.AddAuthorization(options =>
 });
 
 builder.Services.AddScoped<ICustomRoleManager, CustomRoleManager>();
+builder.Services.AddScoped<ISeeder, AdminSeeder>();
 
 
 
@@ -66,6 +68,14 @@ app.UseEndpoints(endpoints =>
 
 app.MapRazorPages();
 
+var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
 
+using (var scope = scopeFactory.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    var adminSeeder = scope.ServiceProvider.GetRequiredService<ISeeder>();
+
+    await adminSeeder.SeedAsync(dbContext, scope.ServiceProvider);
+}
 
 app.Run();
