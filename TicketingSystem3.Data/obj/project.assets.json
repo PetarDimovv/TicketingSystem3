@@ -10464,11 +10464,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Desktop\\New folder (3)\\TicketingSystem3.Data\\TicketingSystem3.Data.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\New folder (5)\\TicketingSystem3.Data\\TicketingSystem3.Data.csproj",
       "projectName": "TicketingSystem3.Data",
-      "projectPath": "C:\\Users\\user\\Desktop\\New folder (3)\\TicketingSystem3.Data\\TicketingSystem3.Data.csproj",
+      "projectPath": "C:\\Users\\user\\Desktop\\New folder (5)\\TicketingSystem3.Data\\TicketingSystem3.Data.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Desktop\\New folder (3)\\TicketingSystem3.Data\\obj\\",
+      "outputPath": "C:\\Users\\user\\Desktop\\New folder (5)\\TicketingSystem3.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
