@@ -17,7 +17,7 @@ namespace TicketingSystem3.Web.Pages.Ticket
         }
 
         [BindProperty]
-      public Data.Models.Ticket Ticket { get; set; }
+        public Data.Models.Ticket Ticket { get; set; }
 
         public async Task<IActionResult> OnGetAsync(long? id)
         {
@@ -32,7 +32,7 @@ namespace TicketingSystem3.Web.Pages.Ticket
             {
                 return NotFound();
             }
-            else 
+            else
             {
                 Ticket = ticket;
             }

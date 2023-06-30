@@ -9,13 +9,11 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
-using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Text.Encodings.Web;
 using TicketingSystem3.Data.Data;
 using TicketingSystem3.Data.Models;
-using TicketingSystem3.Web.Pages.Admin;
 
 namespace TicketingSystem3.Web.Areas.Identity.Pages.Account
 {
@@ -114,7 +112,6 @@ namespace TicketingSystem3.Web.Areas.Identity.Pages.Account
             public string ConfirmPassword { get; set; }
         }
 
-
         public async Task OnGetAsync(string returnUrl = null)
         {
             ReturnUrl = returnUrl;
@@ -132,11 +129,10 @@ namespace TicketingSystem3.Web.Areas.Identity.Pages.Account
                 user.LastName = Input.LastName;
 
                 await _userStore.SetUserNameAsync(user, Input.UserName, CancellationToken.None);
-                await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None); 
+                await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
-                    
                     if (!await _roleManager.RoleExistsAsync("Admin"))
                     {
                         await _roleManager.CreateAsync(new IdentityRole("Admin"));

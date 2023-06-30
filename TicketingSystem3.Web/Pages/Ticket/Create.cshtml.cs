@@ -2,8 +2,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using System.Data;
 using TicketingSystem3.Data.Data;
 
 namespace TicketingSystem3.Web.Pages.Ticket
@@ -13,7 +11,6 @@ namespace TicketingSystem3.Web.Pages.Ticket
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<Data.Models.ApplicationUser> _userManager;
-        
 
         public CreateModel(ApplicationDbContext context, UserManager<Data.Models.ApplicationUser> userManager)
         {
@@ -26,21 +23,20 @@ namespace TicketingSystem3.Web.Pages.Ticket
 
         [BindProperty]
         public Data.Models.Ticket Ticket { get; set; }
-       
+
         [BindProperty]
         public long Id { get; set; }
 
-
         public IActionResult OnGet(long id)
         {
-            if(id == 0)
+            if (id == 0)
             {
                 return NotFound();
             }
             Id = id;
-            //ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Id");
             return Page();
         }
+
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)

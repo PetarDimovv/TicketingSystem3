@@ -11,13 +11,13 @@ namespace TicketingSystem3.Web.Pages.Message
     {
         private readonly ApplicationDbContext _context;
 
-        public DeleteModel (ApplicationDbContext context)
+        public DeleteModel(ApplicationDbContext context)
         {
             _context = context;
         }
 
         [BindProperty]
-      public Data.Models.Message Message { get; set; }
+        public Data.Models.Message Message { get; set; }
 
         public async Task<IActionResult> OnGetAsync(long? id)
         {
@@ -32,7 +32,7 @@ namespace TicketingSystem3.Web.Pages.Message
             {
                 return NotFound();
             }
-            else 
+            else
             {
                 Message = message;
             }

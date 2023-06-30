@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TicketingSystem3.Data.Data;
 using TicketingSystem3.Data.Models;
@@ -15,14 +14,14 @@ namespace TicketingSystem3.Web.Pages.Message
         private readonly ApplicationDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
 
-        public EditModel (ApplicationDbContext context, UserManager<ApplicationUser> userManager)
+        public EditModel(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
             _userManager = userManager;
         }
 
         [BindProperty]
-        public DateTime CreatedOn { get; set; } 
+        public DateTime CreatedOn { get; set; }
 
         [BindProperty]
         public Data.Models.Message Message { get; set; } = default!;
@@ -40,7 +39,7 @@ namespace TicketingSystem3.Web.Pages.Message
                 return NotFound();
             }
 
-            var message =  await _context.Messages.FirstOrDefaultAsync(m => m.Id == id);
+            var message = await _context.Messages.FirstOrDefaultAsync(m => m.Id == id);
             if (message == null)
             {
                 return NotFound();
@@ -49,7 +48,7 @@ namespace TicketingSystem3.Web.Pages.Message
             NewTicketId = message.TicketId;
             UserId = message.UserId;
             Message = message;
-            
+
             return Page();
         }
 
@@ -68,7 +67,6 @@ namespace TicketingSystem3.Web.Pages.Message
             Message.TicketId = NewTicketId;
             Message.UserId = user.Id;
             Message.CreatedOn = CreatedOn;
-
 
             try
             {
@@ -91,7 +89,7 @@ namespace TicketingSystem3.Web.Pages.Message
 
         private bool MessageExists(long id)
         {
-          return _context.Messages.Any(e => e.Id == id);
+            return _context.Messages.Any(e => e.Id == id);
         }
     }
 }

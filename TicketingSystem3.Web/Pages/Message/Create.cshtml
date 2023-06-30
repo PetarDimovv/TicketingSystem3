@@ -25,8 +25,8 @@
             <div class="mb-3">
                 <label asp-for="CreateMessageRequest.Status" class="control-label"></label>
                 <select asp-for="CreateMessageRequest.Status" class="form-control">
-                        <option value="0">Draft</option>
-                        <option value="1">Published</option>
+                    <option value="0">Draft</option>
+                    <option value="1">Published</option>
                 </select>
                 <span asp-validation-for="Message.Status" class="text-danger"></span>
             </div>
@@ -47,5 +47,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

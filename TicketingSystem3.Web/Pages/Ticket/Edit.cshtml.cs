@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TicketingSystem3.Data.Data;
 using TicketingSystem3.Data.Models;
@@ -33,7 +32,6 @@ namespace TicketingSystem3.Web.Pages.Ticket
         [BindProperty]
         public string UserId { get; set; }
 
-
         public async Task<IActionResult> OnGetAsync(long? id)
         {
             if (id == null || _context.Tickets == null)
@@ -41,11 +39,12 @@ namespace TicketingSystem3.Web.Pages.Ticket
                 return NotFound();
             }
 
-            var ticket =  await _context.Tickets.FirstOrDefaultAsync(m => m.Id == id);
+            var ticket = await _context.Tickets.FirstOrDefaultAsync(m => m.Id == id);
             if (ticket == null)
             {
                 return NotFound();
             }
+
             CreatedOn = ticket.CreatedOn;
             NewProjectId = ticket.ProjectId;
             UserId = ticket.UserId;
@@ -90,7 +89,7 @@ namespace TicketingSystem3.Web.Pages.Ticket
 
         private bool TicketExists(long id)
         {
-          return _context.Tickets.Any(e => e.Id == id);
+            return _context.Tickets.Any(e => e.Id == id);
         }
     }
 }

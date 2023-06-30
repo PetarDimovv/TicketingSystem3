@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
-using System.Reflection.Emit;
-using TicketingSystem3.Data.EntityConfigurations;
 using TicketingSystem3.Data.Models;
 using TicketingSystem3.Data.Models.BaseModels;
 
@@ -24,7 +22,6 @@ namespace TicketingSystem3.Data.Data
         public DbSet<Project> Projects { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<TicketingSystem3.Data.Models.File> Files { get; set; }
-
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

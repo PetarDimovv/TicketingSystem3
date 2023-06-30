@@ -15,7 +15,7 @@ namespace TicketingSystem3.Web.Pages.Message
             _context = context;
         }
 
-        public IList<Data.Models.Message> Message { get;set; } = default!;
+        public IList<Data.Models.Message> Message { get; set; } = default!;
 
         public async Task OnGetAsync()
         {

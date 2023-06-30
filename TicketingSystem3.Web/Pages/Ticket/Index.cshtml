@@ -10,7 +10,6 @@
     </div>
 </div>
 
-
 <table class="table">
     <thead>
         <tr>
@@ -77,8 +76,8 @@
                     @Html.DisplayFor(modelItem => item.ModifiedOn)
                 </td>
                 <td>
-                    <a asp-page="/Message/TickIndex" asp-route-id="@item.Id" class="btn btn-primary">View Messages</a> 
-                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a> 
+                    <a asp-page="/Message/TickIndex" asp-route-id="@item.Id" class="btn btn-primary">View Messages</a>
+                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
                     <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-primary">Delete</a>
                     <a asp-page="/Message/Create" asp-route-id="@item.Id" class="btn btn-primary">Create Message</a>
                 </td>

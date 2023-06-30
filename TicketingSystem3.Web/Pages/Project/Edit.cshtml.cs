@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using System.Data;
 using TicketingSystem3.Data.Data;
 
 namespace TicketingSystem3.Web.Pages.Project
@@ -28,7 +26,7 @@ namespace TicketingSystem3.Web.Pages.Project
                 return NotFound();
             }
 
-            var project =  await _context.Projects.FirstOrDefaultAsync(m => m.Id == id);
+            var project = await _context.Projects.FirstOrDefaultAsync(m => m.Id == id);
             if (project == null)
             {
                 return NotFound();
@@ -70,7 +68,7 @@ namespace TicketingSystem3.Web.Pages.Project
 
         private bool ProjectExists(long id)
         {
-          return _context.Projects.Any(e => e.Id == id);
+            return _context.Projects.Any(e => e.Id == id);
         }
     }
 }

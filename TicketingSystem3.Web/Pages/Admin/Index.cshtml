@@ -18,7 +18,7 @@
     <tbody>
         @foreach (var user in Model.Users)
         {
-            @if(user.IsApprove == true)
+            @if (user.IsApprove == true)
             {
                 continue;
             }
@@ -32,7 +32,7 @@
                     }
                 </td>
                 <td>
-                    <a href="Admin/EditUser?userId=@user.Id" class="btn btn-primary">Edit</a>
+                    <a asp-page="./EditUser" asp-route-userid="@user.Id" class="btn btn-primary">Edit</a>
                 </td>
                 <td>
                     <form method="post" asp-page-handler="UserApprove" asp-route-id="@user.Id">
@@ -62,7 +62,7 @@
                     }
                 </td>
                 <td>
-                    <a href="Admin/EditUser?userId=@user.Id" class="btn btn-primary">Edit</a>
+                    <a asp-page="./EditUser" asp-route-userid="@user.Id" class="btn btn-primary">Edit</a>
                 </td>
             </tr>
         }

@@ -27,15 +27,11 @@ namespace TicketingSystem3.Web.Pages.Message
             return Page();
         }
 
-
         [BindProperty]
         public Data.Models.ViewModels.CreateMessage CreateMessageRequest { get; set; }
 
         [BindProperty]
         public Data.Models.Message Message { get; set; }
-
-
-
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync(long id)

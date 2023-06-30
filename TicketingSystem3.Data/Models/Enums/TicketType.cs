@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Xml.Linq;
 
 namespace TicketingSystem3.Data.Models.Enums
 {
@@ -14,8 +13,9 @@ namespace TicketingSystem3.Data.Models.Enums
         [Display(Name = "Other")]
         Other
     }
+
     public class UnverifiedTicketTypePayload
     {
-        public TicketType Types { get; set; } = TicketType.BugReport; 
+        public TicketType Types { get; set; } = TicketType.BugReport;
     }
 }
