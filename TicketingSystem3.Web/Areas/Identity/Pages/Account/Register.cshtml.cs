@@ -127,7 +127,7 @@ namespace TicketingSystem3.Web.Areas.Identity.Pages.Account
                 var user = CreateUser();
                 user.FirstName = Input.FirstName;
                 user.LastName = Input.LastName;
-
+                user.IsApprove = true;
                 await _userStore.SetUserNameAsync(user, Input.UserName, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
                 var result = await _userManager.CreateAsync(user, Input.Password);
@@ -147,7 +147,7 @@ namespace TicketingSystem3.Web.Areas.Identity.Pages.Account
                     {
                         await _roleManager.CreateAsync(new IdentityRole("Customer"));
                     }
-                    await _userManager.AddToRoleAsync(user, "Customer");
+                    await _userManager.AddToRoleAsync(user, "Admin");
                 }
 
                 if (result.Succeeded)

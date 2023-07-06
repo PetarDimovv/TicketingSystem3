@@ -1,6 +1,8 @@
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using TicketingSystem3.Data.Data;
 using TicketingSystem3.Data.Data.CustomRoles;
 using TicketingSystem3.Data.Data.Seeders;
@@ -33,7 +35,24 @@ builder.Services.AddAuthorization(options =>
 builder.Services.AddScoped<ICustomRoleManager, CustomRoleManager>();
 builder.Services.AddScoped<ISeeder, AdminSeeder>();
 
+
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+
+    if (!dbContext.Database.CanConnect())
+    {
+        dbContext.Database.EnsureCreated();
+    }
+
+    var migrator = dbContext.GetInfrastructure().GetRequiredService<IMigrator>();
+    migrator.Migrate();
+
+    var adminSeeder = scope.ServiceProvider.GetRequiredService<ISeeder>();
+    await adminSeeder.SeedAsync(dbContext, scope.ServiceProvider);
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -61,15 +80,5 @@ app.UseEndpoints(endpoints =>
 });
 
 app.MapRazorPages();
-
-var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
-
-using (var scope = scopeFactory.CreateScope())
-{
-    var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-    var adminSeeder = scope.ServiceProvider.GetRequiredService<ISeeder>();
-
-    await adminSeeder.SeedAsync(dbContext, scope.ServiceProvider);
-}
 
 app.Run();
