@@ -147,7 +147,7 @@ namespace TicketingSystem3.Web.Areas.Identity.Pages.Account
                     {
                         await _roleManager.CreateAsync(new IdentityRole("Customer"));
                     }
-                    await _userManager.AddToRoleAsync(user, "Admin");
+                    await _userManager.AddToRoleAsync(user, "Customer");
                 }
 
                 if (result.Succeeded)
