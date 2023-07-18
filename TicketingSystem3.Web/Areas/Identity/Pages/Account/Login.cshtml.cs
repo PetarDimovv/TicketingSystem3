@@ -109,7 +109,16 @@ namespace TicketingSystem3.Web.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = await _userManager.FindByNameAsync(Input.UserName);
-                if (!user.IsApprove) return Page();
+                if (user == null)
+                {
+                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    return Page();
+                }
+                if (!user.IsApprove)
+                {
+                    ModelState.AddModelError(string.Empty, "The account is not approve, please wait for Admin to view your account!");
+                    return Page();
+                }
 
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
@@ -123,6 +132,7 @@ namespace TicketingSystem3.Web.Areas.Identity.Pages.Account
                 {
                     return RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl, RememberMe = Input.RememberMe });
                 }
+                
                 if (result.IsLockedOut)
                 {
                     _logger.LogWarning("User account locked out.");

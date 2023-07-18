@@ -35,6 +35,9 @@
                     <a asp-page="./EditUser" asp-route-userid="@user.Id" class="btn btn-primary">Edit</a>
                 </td>
                 <td>
+                    <a asp-page="./DeleteUser" asp-route-userid="@user.Id" class="btn btn-danger">Delete</a>
+                </td>
+                <td>
                     <form method="post" asp-page-handler="UserApprove" asp-route-id="@user.Id">
                         <button type="submit">Approve</button>
                     </form>
@@ -63,6 +66,9 @@
                 </td>
                 <td>
                     <a asp-page="./EditUser" asp-route-userid="@user.Id" class="btn btn-primary">Edit</a>
+                </td>
+                <td>
+                    <a asp-page="./DeleteUser" asp-route-userid="@user.Id" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
         }
