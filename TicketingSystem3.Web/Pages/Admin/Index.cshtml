@@ -4,73 +4,81 @@
 @{
     ViewData["Title"] = "Index";
 }
+<style>
+    .table-container {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+</style>
 
-<h1>User List</h1>
+<h1 class="table-cantainer text-center alert-info">User List</h1>
 
-<table>
-    <thead>
-        <tr>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Roles</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var user in Model.Users)
-        {
-            @if (user.IsApprove == true)
-            {
-                continue;
-            }
+<div class="table-cantainer text-center alert-info">
+    <table class="table">
+        <thead>
             <tr>
-                <td>@user.UserName</td>
-                <td>@user.Email</td>
-                <td>
-                    @foreach (var role in user.Roles)
-                    {
-                        <span>@role</span>
-                    }
-                </td>
-                <td>
-                    <a asp-page="./EditUser" asp-route-userid="@user.Id" class="btn btn-primary">Edit</a>
-                </td>
-                <td>
-                    <a asp-page="./DeleteUser" asp-route-userid="@user.Id" class="btn btn-danger">Delete</a>
-                </td>
-                <td>
-                    <form method="post" asp-page-handler="UserApprove" asp-route-id="@user.Id">
-                        <button type="submit">Approve</button>
-                    </form>
-                </td>
-                <td>
-                    <form method="post" asp-page-handler="UserReject" asp-route-id="@user.Id">
-                        <button type="submit">Reject</button>
-                    </form>
-                </td>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Roles</th>
             </tr>
-        }
-        @foreach (var user in Model.Users)
-        {
-            @if (user.IsApprove == false)
+        </thead>
+        <tbody>
+            @foreach (var user in Model.Users)
             {
-                continue;
+                @if (user.IsApprove == true)
+                {
+                    continue;
+                }
+                <tr>
+                    <td>@user.UserName</td>
+                    <td>@user.Email</td>
+                    <td>
+                        @foreach (var role in user.Roles)
+                        {
+                            <span>@role</span>
+                        }
+                    </td>
+                    <td>
+                        <a asp-page="./EditUser" asp-route-userid="@user.Id" class="btn btn-primary">Edit</a>
+                    </td>
+                    <td>
+                        <a asp-page="./DeleteUser" asp-route-userid="@user.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                    <td>
+                        <form method="post" asp-page-handler="UserApprove" asp-route-id="@user.Id">
+                            <button type="submit">Approve</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form method="post" asp-page-handler="UserReject" asp-route-id="@user.Id">
+                            <button type="submit">Reject</button>
+                        </form>
+                    </td>
+                </tr>
             }
-            <tr>
-                <td>@user.UserName</td>
-                <td>@user.Email</td>
-                <td>
-                    @foreach (var role in user.Roles)
-                    {
-                        <span>@role</span>
-                    }
-                </td>
-                <td>
-                    <a asp-page="./EditUser" asp-route-userid="@user.Id" class="btn btn-primary">Edit</a>
-                </td>
-                <td>
-                    <a asp-page="./DeleteUser" asp-route-userid="@user.Id" class="btn btn-danger">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+            @foreach (var user in Model.Users)
+            {
+                @if (user.IsApprove == false)
+                {
+                    continue;
+                }
+                <tr>
+                    <td>@user.UserName</td>
+                    <td>@user.Email</td>
+                    <td>
+                        @foreach (var role in user.Roles)
+                        {
+                            <span>@role</span>
+                        }
+                    </td>
+                    <td>
+                        <a asp-page="./EditUser" asp-route-userid="@user.Id" class="btn btn-primary">Edit</a>
+                    </td>
+                    <td>
+                        <a asp-page="./DeleteUser" asp-route-userid="@user.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

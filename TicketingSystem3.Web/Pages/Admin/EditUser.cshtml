@@ -4,38 +4,44 @@
     ViewData["Title"] = "EditUser";
 }
 
-<h1>Edit User</h1>
+<div class="container text-center alert-info">
+    <div>
+        <h1>Edit User</h1>
+    </div>
+</div>
 
-<form method="post">
-    <input type="hidden" asp-for="CurrentRole" />
-    <div>
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" name="FirstName" value="@Model.User.FirstName" />
-    </div>
-    <div>
-        <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" name="LastName" value="@Model.User.LastName" />
-    </div>
-    <div>
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="Email" value="@Model.User.Email" />
-    </div>
-    <div>
-        <label for="currentRoles">Current Role:</label>
-        <span id="currentRoles">@Model.CurrentRole</span>
-    </div>
-    <div>
-        <label for="newRole">New Role:</label>
-        <select id="newRole" name="NewRole">
-            <option value="Customer">Customer</option>
-            <option value="Support">Support</option>
-            <option value="Admin">Admin</option>
-        </select>
-    </div>
-    <div>
-        <label for="password">New Password:</label>
-        <input type="password" id="password" name="Password" value="@Model.Password" />
-    </div>
+<div class="container alert-info">
+    <form method="post">
+        <input type="hidden" asp-for="CurrentRole" />
+        <div>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="FirstName" value="@Model.User.FirstName" />
+        </div>
+        <div>
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="LastName" value="@Model.User.LastName" />
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="Email" value="@Model.User.Email" />
+        </div>
+        <div>
+            <label for="currentRoles">Current Role:</label>
+            <span id="currentRoles">@Model.CurrentRole</span>
+        </div>
+        <div>
+            <label for="newRole">New Role:</label>
+            <select id="newRole" name="NewRole">
+                <option value="Customer">Customer</option>
+                <option value="Support">Support</option>
+                <option value="Admin">Admin</option>
+            </select>
+        </div>
+        <div>
+            <label for="password">New Password:</label>
+            <input type="password" id="password" name="Password" value="@Model.Password" />
+        </div>
 
-    <button type="submit">Save Changes</button>
-</form>
+        <button type="submit">Save Changes</button>
+    </form>
+</div>

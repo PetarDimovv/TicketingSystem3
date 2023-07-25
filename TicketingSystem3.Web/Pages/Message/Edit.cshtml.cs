@@ -44,6 +44,7 @@ namespace TicketingSystem3.Web.Pages.Message
             {
                 return NotFound();
             }
+
             CreatedOn = message.CreatedOn;
             NewTicketId = message.TicketId;
             UserId = message.UserId;
@@ -84,7 +85,14 @@ namespace TicketingSystem3.Web.Pages.Message
                 }
             }
 
-            return RedirectToPage("./Index");
+            if (User.IsInRole("Customer"))
+            {
+                return RedirectToPage("./TickIndex");
+            }
+            else
+            {
+                return RedirectToPage("./Index");
+            }
         }
 
         private bool MessageExists(long id)

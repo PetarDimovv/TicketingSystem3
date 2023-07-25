@@ -3,12 +3,17 @@
 @{
     ViewData["Title"] = "Register";
 }
+<style>
+    .table-container {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+</style>
 
-<h1>@ViewData["Title"]</h1>
-
-<div class="row">
+<div class="row table-container alert-info">
     <div class="col-md-4">
         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <h1>@ViewData["Title"]</h1>
             <h2>Create a new account.</h2>
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>

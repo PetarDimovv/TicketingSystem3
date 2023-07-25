@@ -4,14 +4,14 @@
 @{
     ViewData["Title"] = "Edit";
 }
-<div class="bg-secondary bg-opacity-10 py-2">
-    <div class="container">
+<div class="container text-center alert-info">
+    <div>
         <h1>Edit Message</h1>
-    </div>
+    </div> 
 </div>
 
-<div>
-    <div class="container">
+<div class="container alert-info">
+    <div>
         <form method="post">
             <input type="hidden" asp-for="NewTicketId" />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -39,13 +39,10 @@
             <div class="mb-3">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
+            <div>
+                <a asp-page="./Index">Back to List</a>
+            </div>
         </form>
-    </div>
-</div>
-
-<div>
-    <div class="container">
-        <a asp-page="./Index">Back to List</a>
     </div>
 </div>
 

@@ -4,71 +4,63 @@
 @{
     ViewData["Title"] = "Index";
 }
+<style>
+    .table-container {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+</style>
 
-<div class="bg-secondary bg-opacity-10 py-2">
+<div class="table-container text-center alert-info">
     <div>
         <h1>Messages</h1>
     </div>
 </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Message[0].Ticket)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Message[0].User)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Message[0].Content)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Message[0].Status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Message[0].PublicationDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Message[0].CreatedOn)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Message[0].ModifiedOn)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Message)
-        {
+<div class="table-container alert-info">
+    <table class="table">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Ticket.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.User.UserName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Content)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Status)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PublicationDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CreatedOn)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ModifiedOn)
-                </td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
-                    <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-primary">Details</a>
-                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-primary">Delete</a>
-                </td>
+                <th>Ticket</th>
+                <th>User</th>
+                <th>Content</th>
+                <th>Status</th>
+                <th>Publication Date</th>
+                <th>Created On</th>
+                <th>Modified On</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Message)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ticket.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.User.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Content)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PublicationDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedOn)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ModifiedOn)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                        <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

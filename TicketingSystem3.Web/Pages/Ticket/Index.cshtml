@@ -4,84 +4,75 @@
     ViewData["Title"] = "Index";
 }
 
-<div class="bg-secondary bg-opacity-10 py-2">
+<style>
+    .table-container {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+</style>
+
+<div class="table-container text-center alert-info">
     <div>
         <h1>Tickets</h1>
     </div>
 </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Ticket[0].Project)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ticket[0].Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ticket[0].Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ticket[0].User)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ticket[0].Type)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ticket[0].Status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ticket[0].CreatedOn)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ticket[0].SubmissionDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ticket[0].ModifiedOn)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Ticket)
-        {
-            if (User.Identity.Name != item.User.UserName && User.IsInRole("Customer")) continue;
+<div class="table-container alert-info">
+    <table class="table">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Project.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.User.UserName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Type)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Status)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CreatedOn)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SubmissionDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ModifiedOn)
-                </td>
-                <td>
-                    <a asp-page="/Message/TickIndex" asp-route-id="@item.Id" class="btn btn-primary">View Messages</a>
-                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
-                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-primary">Delete</a>
-                    <a asp-page="/Message/Create" asp-route-id="@item.Id" class="btn btn-primary">Create Message</a>
-                </td>
+                <th>Project</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>User</th>
+                <th>Type</th>
+                <th>Status</th>
+                <th>Submission Date</th>
+                <th>Created On</th>
+                <th>Modified On</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Ticket)
+            {
+                if (User.Identity.Name != item.User.UserName && User.IsInRole("Customer")) continue;
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Project.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.User.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Type)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SubmissionDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedOn)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ModifiedOn)
+                    </td>
+                    <td>
+                        <a asp-page="/Message/Create" asp-route-id="@item.Id" class="btn btn-success">Create Message</a>
+                        <a asp-page="/Message/TickIndex" asp-route-id="@item.Id" class="btn btn-success">View Messages</a>
+                        <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                        <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -21,11 +21,5 @@ namespace TicketingSystem3.Data.Data.CustomRoles
             var role = new IdentityRole(roleName);
             return await _roleManager.CreateAsync(role);
         }
-
-        public async Task<IdentityResult> DeleteRoleAsync(string roleName)
-        {
-            var role = await _roleManager.FindByNameAsync(roleName);
-            return await _roleManager.DeleteAsync(role);
-        }
     }
 }

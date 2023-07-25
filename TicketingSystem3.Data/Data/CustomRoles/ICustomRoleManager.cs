@@ -6,6 +6,5 @@ namespace TicketingSystem3.Data.Data.CustomRoles
     {
         Task<bool> RoleExistsAsync(string roleName);
         Task<IdentityResult> CreateRoleAsync(string roleName);
-        Task<IdentityResult> DeleteRoleAsync(string roleName);
     }
 }

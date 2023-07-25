@@ -4,13 +4,13 @@
     ViewData["Title"] = "DeleteUser";
 }
 
-<div class="alert alert-warning" role="alert">
+<div class="container alert alert-warning" role="alert">
     <p>
         <strong>Deleting this data will permanently remove the account, and this cannot be recovered.</strong>
     </p>
 </div>
 
-<div>
+<div class="container">
     <form id="delete-user" method="post">
         <input type="hidden" asp-for="PassedId" />
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
